@@ -10,11 +10,19 @@ $(function () {
   var saveEl = $('.saveBtn');
   var $hours = $('.hour');
   var currentHour = parseInt(dayjs().format('HH'));
+  
 
   saveEl.on('click', function() {
-    const parentDiv = this.parentNode;
-    const savedHr = parentDiv.id;
+
+    var textEl = $(this).prev();
+    var savedTask = textEl.val()
+    var hourKey = textEl.id;
+    localStorage.setItem(this.id, savedTask);
   })
+
+  function saveTaskToStorage() {
+    localStorage.setItem(sectionId, parentDiv);
+  }
 
   var checkTime = function() {
 
