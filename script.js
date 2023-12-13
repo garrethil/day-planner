@@ -2,6 +2,7 @@
 $(function () {
 
   var timeEl = $('#time'); 
+  var clearTasksBtn = $('.clearBtn');
   var saveEl = $('.saveBtn');
   var $hours = $('.hour');
   var hr9Text = $('#hr9');
@@ -14,6 +15,22 @@ $(function () {
   var hr16Text = $('#hr16');
   var hr17Text = $('#hr17');
   var currentHour = parseInt(dayjs().format('HH'));
+
+
+  clearTasksBtn.on('click', function(){
+    localStorage.removeItem('hour-9');
+    localStorage.removeItem('hour-10');
+    localStorage.removeItem('hour-11');
+    localStorage.removeItem('hour-12');
+    localStorage.removeItem('hour-13');
+    localStorage.removeItem('hour-14');
+    localStorage.removeItem('hour-15');
+    localStorage.removeItem('hour-16');
+    localStorage.removeItem('hour-17');
+    getSavedTasks();
+  }) 
+
+  
   
 
   saveEl.on('click', function() {
@@ -23,9 +40,6 @@ $(function () {
     localStorage.setItem(this.id, savedTask);
   })
 
-  function saveTaskToStorage() {
-    localStorage.setItem(sectionId, parentDiv);
-  }
 
   var checkTime = function() {
 

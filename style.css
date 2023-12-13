@@ -20,6 +20,13 @@ textarea {
   border-radius: 15px;
 }
 
+.clearBtn {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: lightblue;
+  color: gray;
+}
+
 .row {
   border-top: 1px solid white;
 }
